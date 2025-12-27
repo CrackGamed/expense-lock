@@ -46,9 +46,15 @@
 
 
         <input type="number" id="amount" placeholder="Enter expense amount">
-        <button onclick="addExpense()">Add Expense</button>
-		<button class="revert-btn" onclick="revertWeek()">Revert</button>
-	<button class="reset-btn" onclick="resetWeek()">Reset Week</button>
+        
+		<button onclick="addExpense()">Add Expense</button>
+
+		<div class="action-row">
+   			 <button class="revert-btn" onclick="revertWeek()">Revert</button>
+    		 <button class="reset-btn" onclick="resetWeek()">Reset Week</button>
+		</div>
+
+		
     </div>
 
     <script src="script.js"></script>
@@ -62,4 +68,5 @@ if ("serviceWorker" in navigator) {
 
 </body>
 </html>
+
 
