@@ -218,7 +218,7 @@ button:hover {
 /* Revert (soft action) */
 .revert-btn {
     flex: 1;
-    background: transparent;
+    background: #ff5c5c;
     border: 1px dashed #ccc;
     color: #666;
     font-size: 14px;
@@ -241,6 +241,7 @@ button:hover {
 .reset-btn:hover {
     box-shadow: 0 6px 16px rgba(255, 92, 92, 0.4);
 }
+
 
 
 
