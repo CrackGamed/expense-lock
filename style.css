@@ -219,8 +219,8 @@ button:hover {
 .revert-btn {
     flex: 1;
     background: #ff5c5c;
-    border: 1px dashed #ccc;
-    color: #666;
+    /*border: 1px dashed #ccc;*/
+    color: white;
     font-size: 14px;
     padding: 10px;
 }
@@ -230,17 +230,20 @@ button:hover {
     flex: 1;
     background: #ff5c5c;
     color: white;
+    font-size: 14px;
     padding: 10px;
 }
 
 /* Hover feedback */
 .revert-btn:hover {
-    background: #f4f4f4;
+    /*background: #f4f4f4;*/
+    box-shadow: 0 6px 16px rgba(255, 92, 92, 0.4);
 }
 
 .reset-btn:hover {
     box-shadow: 0 6px 16px rgba(255, 92, 92, 0.4);
 }
+
 
 
 
