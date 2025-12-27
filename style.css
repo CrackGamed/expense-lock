@@ -1,0 +1,219 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Background */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Card */
+.container {
+    background: #ffffff;
+    width: 340px;
+    padding: 28px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Title */
+h1 {
+    color: #2d2d2d;
+    font-size: 28px;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+/* Stats */
+p {
+    margin: 12px 0;
+    font-size: 15px;
+    color: #333;
+}
+
+strong {
+    color: #555;
+}
+
+/* Highlight numbers */
+#spent {
+    color: #ff5c5c;
+    font-weight: bold;
+}
+
+#days {
+    color: #4caf50;
+    font-weight: bold;
+}
+
+/* Input */
+input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 18px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 15px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #667eea;
+}
+
+/* Button */
+button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.5);
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Reset Button */
+.reset-btn {
+    background: #ff5c5c;
+    margin-top: 10px;
+}
+
+.reset-btn:hover {
+    box-shadow: 0 8px 20px rgba(255, 92, 92, 0.5);
+}
+
+/* Date */
+.date {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 12px;
+}
+
+/* Budget box 
+.budget-box {
+    background: linear-gradient(135deg, #43cea2, #185a9d);
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+}
+
+.budget-label {
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+.budget-amount {
+    font-size: 26px;
+    font-weight: bold;
+    margin-top: 4px;
+}
+
+.divider {
+    border: none;
+    height: 1px;
+    background: rgba(255,255,255,0.4);
+    margin: 10px 0;
+}
+*/
+
+/* Compact summary rows */
+.summary-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+/* Info boxes */
+.summary-box {
+    flex: 1;
+    background: #f5f7fa;
+    border-radius: 12px;
+    padding: 12px;
+    text-align: center;
+}
+
+.summary-box.small {
+    padding: 10px;
+}
+
+/* Labels & values */
+.label {
+    font-size: 12px;
+    color: #666;
+}
+
+.value {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Responsive container */
+.container {
+    width: 100%;
+    max-width: 360px;
+}
+
+.week-info {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 12px;
+}
+
+/* Mobile optimisation */
+@media (max-width: 480px) {
+    body {
+        padding: 12px;
+    }
+
+    .container {
+        max-width: 100%;
+        border-radius: 14px;
+    }
+
+    .value {
+        font-size: 18px;
+    }
+
+    button {
+        font-size: 15px;
+    }
+}
+

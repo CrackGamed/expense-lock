@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weekly Expense Lock</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <div class="container">
+	
+	<p class="date" id="currentDate"></p>
+	<p class="week-info">Week <span id="weekNumber">1</span></p>
+
+	<div class="summary-row">
+    		<div class="summary-box">
+        		<p class="label">Wallet Balance</p>
+        		<p class="value">₹<span id="balance">3750</span></p>
+    		</div>
+
+    		<div class="summary-box">
+        		<p class="label">This Week Remaining</p>
+        		<p class="value">₹<span id="remaining">250</span></p>
+    		</div>
+	</div> 	
+
+	
+        <h1>EXPENSE TRACKER</h1>
+	<p class="subtitle">One For The Broke</p>
+	<p><strong>Weekly Limit:</strong> ₹250</p>
+        
+   	<div class="summary-row">
+    		<div class="summary-box small">
+        		<p class="label">Spent This Week</p>
+        		<p class="value">₹<span id="spent">0</span></p>
+    		</div>
+
+    		<div class="summary-box small">
+        		<p class="label">Days Left</p>
+        		<p class="value"><span id="days">7</span></p>
+    		</div>
+   	</div>
+
+
+        <input type="number" id="amount" placeholder="Enter expense amount">
+        <button onclick="addExpense()">Add Expense</button>
+	<button class="reset-btn" onclick="resetWeek()">Reset Week</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
