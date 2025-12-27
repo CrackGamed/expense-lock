@@ -10,10 +10,18 @@ function showCurrentDate() {
 }
 
 // Load data or create fresh
+/*let data = JSON.parse(localStorage.getItem("expenseData")) || {
+    startDate: null,
+    weeklySpent: 0,
+    balanceLeft: TOTAL_BALANCE,
+    weekNumber: 1
+};*/
+
 let data = JSON.parse(localStorage.getItem("expenseData")) || {
     startDate: null,
     weeklySpent: 0,
     balanceLeft: TOTAL_BALANCE,
+    weekStartBalance: TOTAL_BALANCE,
     weekNumber: 1
 };
 
@@ -72,8 +80,13 @@ function addExpense() {
     if (!amount || amount <= 0) return;
 
     // Weekly start
+    // if (!data.startDate) {
+    //     data.startDate = new Date().toISOString();
+    // }
+
     if (!data.startDate) {
         data.startDate = new Date().toISOString();
+        data.weekStartBalance = data.balanceLeft;
     }
 
     // Block if weekly limit exceeded
@@ -112,9 +125,25 @@ function resetWeek() {
     updateUI();
 }
 
+function revertWeek() {
+    const confirmRevert = confirm(
+        "Revert this week?\nAll spending will be undone and wallet restored."
+    );
+
+    if (!confirmRevert) return;
+
+    data.balanceLeft = data.weekStartBalance;
+    data.weeklySpent = 0;
+    data.startDate = null;
+
+    localStorage.setItem("expenseData", JSON.stringify(data));
+    updateUI();
+}
+
 
 // On page load
 showCurrentDate();
 updateUI();
 checkAlert();
+
 
