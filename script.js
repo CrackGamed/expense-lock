@@ -125,7 +125,7 @@ function resetWeek() {
     updateUI();
 }
 
-function revertWeek() {
+/*function revertWeek() {
     const confirmRevert = confirm(
         "Revert this week?\nAll spending will be undone and wallet restored."
     );
@@ -138,12 +138,34 @@ function revertWeek() {
 
     localStorage.setItem("expenseData", JSON.stringify(data));
     updateUI();
+}*/
+
+function revertWeek() {
+    const confirmRevert = confirm(
+        "Revert this week?\nAll spending will be undone."
+    );
+
+    if (!confirmRevert) return;
+
+    // SAFETY CHECK for older stored data
+    if (typeof data.weekStartBalance !== "number") {
+        data.weekStartBalance = data.balanceLeft + data.weeklySpent;
+    }
+
+    data.balanceLeft = data.weekStartBalance;
+    data.weeklySpent = 0;
+    data.startDate = null;
+
+    localStorage.setItem("expenseData", JSON.stringify(data));
+    updateUI();
 }
+
 
 
 // On page load
 showCurrentDate();
 updateUI();
 checkAlert();
+
 
 
